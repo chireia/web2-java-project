@@ -48,12 +48,14 @@ public class UsuarioDAOImpl implements UsuarioDAO {
     public boolean login(String usuario, String senha) {
         EntityManager em = fabrica.createEntityManager();
         Query q = em.createQuery(
-                "SELECT c FROM Usuario as c WHERE usuario = :usuario AND senha = :senha"
-        ); //JPQL
-        q.setParameter("usuario", usuario);
-        q.setParameter("senha", senha);
+                "SELECT u FROM Usuario as u WHERE u.usuario = :user AND u.senha = :pw");
+        q.setParameter("user", usuario);
+        q.setParameter("pw", senha);
 
-        if (q.getResultList().size() > 0) {
+        System.out.println(usuario);
+        System.out.println(senha);
+        System.out.println(q.toString());
+        if (q.getResultList().toArray().length > 0) {
             return true;
         }
         return false;

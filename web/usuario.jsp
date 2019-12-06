@@ -39,7 +39,7 @@
                         </ul>
 
                         <div class="nav-btns">
-                            <a href="usuario"><i class="fa fa-user"></i></a>
+                            <a href="login"><i class="fa fa-user"></i></a>
                             <button class="aside-btn"><i class="fa fa-bars"></i></button>
                         </div>
                     </div>

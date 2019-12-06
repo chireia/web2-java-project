@@ -2,7 +2,7 @@ package servlets;
 
 import dao.UsuarioDAO;
 import dao.UsuarioDAOImpl;
-import entidades.Usuario;
+import java.io.Console;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "UsuarioServlet", urlPatterns = {"/usuario"})
-public class UsuarioServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
+public class LoginServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -25,31 +25,20 @@ public class UsuarioServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
 
-        Usuario u = new Usuario();
         UsuarioDAO dao = new UsuarioDAOImpl();
 
-        if (request.getParameter("nome") != null) {
-            int id = Integer.parseInt(request.getParameter("id"));
-            u.setId(id);
-            u.setNome(request.getParameter("nome"));
-            u.setUsuario(request.getParameter("usuario"));
-            u.setSenha(request.getParameter("senha"));
-            u.setNivelAcesso(Integer.parseInt(request.getParameter("nivelAcesso")));
-            dao.save(u);
-        } else if (request.getParameter("excluir") != null) {
-            int id = Integer.parseInt(request.getParameter("excluir"));
-            dao.delete(dao.find(id));
-        } else if (request.getParameter("editar") != null) {
-            int id = Integer.parseInt(request.getParameter("editar"));
+        System.out.println(request.getParameter("usuario"));
 
-            request.setAttribute("usuario", dao.find(id));
+        if (request.getParameter("usuario") != null && request.getParameter("senha") != null) {
+            String usuario = request.getParameter("usuario");
+            String senha = request.getParameter("senha");
+            boolean res = dao.login(usuario, senha);
+            request.setAttribute("teste", res);
         }
 
-        request.setAttribute("lista", dao.list());
-
-        RequestDispatcher view = request.getRequestDispatcher("usuario.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("login.jsp");
         view.forward(request, response);
     }
 
