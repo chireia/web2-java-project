@@ -1,12 +1,13 @@
-<!DOCTYPE html> 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html lang="en"> 
     <head> 
         <title>Tec Niws</title> 
- 
+
         <meta charset="utf-8" /> 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1" /> 
- 
+
         <link 
             href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" 
             rel="stylesheet" 
@@ -17,44 +18,9 @@
     </head> 
     <body> 
         <header id="header"> 
-            <div id="nav"> 
-                <div id="nav-fixed"> 
-                    <div class="container"> 
-                        <div class="nav-logo"> 
-                            <a href="index.html" class="logo" 
-                               ><img src="./img/logo.png" alt="" 
-                                  /></a> 
-                        </div> 
- 
-                        <ul class="nav-menu nav navbar-nav"> 
-                            <li><a href="">News</a></li> 
-                            <li><a href="">Popular</a></li> 
-                            <li class="cat-1"><a href="">Web Design</a></li> 
-                            <li class="cat-2"><a href="">JavaScript</a></li> 
-                            <li class="cat-3"><a href="">Css</a></li> 
-                            <li class="cat-4"><a href="">Jquery</a></li> 
-                        </ul> 
- 
-                        <div class="nav-btns"> 
-                            <a href="login"><i class="fa fa-user"></i></a> 
-                            <button class="aside-btn"><i class="fa fa-bars"></i></button> 
-                        </div> 
-                    </div> 
-                </div> 
- 
-                <div id="nav-aside"> 
-                    <div class="section-row"> 
-                        <ul class="nav-aside-menu"> 
-                            <li><a href="index.html">Home</a></li> 
-                            <li><a href="usuario">Usuários</a></li> 
-                        </ul> 
-                    </div> 
- 
-                    <button class="nav-aside-close"><i class="fa fa-times"></i></button> 
-                </div> 
-            </div> 
+            <%@include file="navbar.html"%>
         </header> 
- 
+
         <div class="section"> 
             <div class="container"> 
                 <div class="row"> 
@@ -79,7 +45,7 @@
                             </div> 
                         </div> 
                     </div> 
- 
+
                     <div class="col-md-6"> 
                         <div class="post post-thumb"> 
                             <a class="post-img" href="" 
@@ -99,7 +65,7 @@
                         </div> 
                     </div> 
                 </div> 
- 
+
                 <div class="row"> 
                     <div class="col-md-8"> 
                         <div class="row"> 
@@ -123,7 +89,7 @@
                                     </div> 
                                 </div> 
                             </div> 
- 
+
                             <div class="col-md-6"> 
                                 <div class="post"> 
                                     <a class="post-img" href="" 
@@ -142,7 +108,7 @@
                                     </div> 
                                 </div> 
                             </div> 
- 
+
                             <div class="col-md-6"> 
                                 <div class="post"> 
                                     <a class="post-img" href="" 
@@ -164,9 +130,9 @@
                                     </div> 
                                 </div> 
                             </div> 
- 
+
                             <div class="clearfix visible-md visible-lg"></div> 
- 
+
                             <div class="col-md-6"> 
                                 <div class="post"> 
                                     <a class="post-img" href="" 
@@ -188,7 +154,7 @@
                                     </div> 
                                 </div> 
                             </div> 
- 
+
                             <div class="col-md-6"> 
                                 <div class="post"> 
                                     <a class="post-img" href="" 
@@ -209,9 +175,9 @@
                                     </div> 
                                 </div> 
                             </div> 
- 
+
                             <div class="clearfix visible-md visible-lg"></div> 
- 
+
                             <div class="col-md-6"> 
                                 <div class="post"> 
                                     <a class="post-img" href="" 
@@ -233,7 +199,7 @@
                                     </div> 
                                 </div> 
                             </div> 
- 
+
                             <div class="col-md-6"> 
                                 <div class="post"> 
                                     <a class="post-img" href="" 
@@ -257,13 +223,13 @@
                             </div> 
                         </div> 
                     </div> 
- 
+
                     <div class="col-md-4"> 
                         <div class="aside-widget"> 
                             <div class="section-title"> 
                                 <h2>Most Read</h2> 
                             </div> 
- 
+
                             <div class="post post-widget"> 
                                 <a class="post-img" href="" 
                                    ><img src="./img/widget-1.jpg" alt="" 
@@ -276,7 +242,7 @@
                                     </h3> 
                                 </div> 
                             </div> 
- 
+
                             <div class="post post-widget"> 
                                 <a class="post-img" href="" 
                                    ><img src="./img/widget-2.jpg" alt="" 
@@ -290,7 +256,7 @@
                                     </h3> 
                                 </div> 
                             </div> 
- 
+
                             <div class="post post-widget"> 
                                 <a class="post-img" href="" 
                                    ><img src="./img/widget-3.jpg" alt="" 
@@ -304,7 +270,7 @@
                                     </h3> 
                                 </div> 
                             </div> 
- 
+
                             <div class="post post-widget"> 
                                 <a class="post-img" href="" 
                                    ><img src="./img/widget-4.jpg" alt="" 
@@ -318,7 +284,7 @@
                                 </div> 
                             </div> 
                         </div> 
- 
+
                         <div class="aside-widget"> 
                             <div class="section-title"> 
                                 <h2>Featured Posts</h2> 
@@ -341,7 +307,7 @@
                                     </h3> 
                                 </div> 
                             </div> 
- 
+
                             <div class="post post-thumb"> 
                                 <a class="post-img" href="" 
                                    ><img src="./img/post-1.jpg" alt="" 
@@ -383,7 +349,7 @@
                                 </ul> 
                             </div> 
                         </div> 
- 
+
                         <div class="aside-widget"> 
                             <div class="tags-widget"> 
                                 <ul> 
@@ -403,11 +369,12 @@
                 </div> 
             </div> 
         </div> 
- 
+
         <footer id="footer"></footer> 
- 
+
         <script src="js/jquery.min.js"></script> 
         <script src="js/bootstrap.min.js"></script> 
         <script src="js/main.js"></script> 
     </body> 
 </html> 
+

@@ -26,9 +26,9 @@
                         <div class="col-md-10">
                             <ul class="page-header-breadcrumb">
                                 <li><a href="index.jsp">Home</a></li>
-                                <li>Níveis de Acesso</li>
+                                <li>Tags</li>
                             </ul>
-                            <h1>Níveis de Acesso</h1>
+                            <h1>Tags</h1>
                         </div>
                     </div>
                 </div>
@@ -45,28 +45,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <j:forEach var="n" items="${lista}">
+                            <j:forEach var="t" items="${lista}">
                                 <tr>
-                                    <td>${n.nome}</td>
+                                    <td>${t.nome}</td>
                                     <td>
-                                        <a href="nivelacessojstl?editar=${n.id}">
+                                        <a href="tagjstl?editar=${t.id}">
                                             <button class="btn btn-primary">Editar</button>
                                         </a>
-                                        <a href="nivelacessojstl?excluir=${n.id}">
+                                        <a href="tagjstl?excluir=${t.id}">
                                             <button class="btn btn-danger">Excluir</button>
                                         </a>
                                     </td>
                                 </tr>
-                            </j:forEach>
+                              </j:forEach>
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-3">
-                    <form method="POST" action="nivelacessojstl">
-                        <input name="id" type="hidden" value="${nivelacesso.id}"/>
+                    <form method="POST" action="tagjstl">
+                        <input name="id" type="hidden" value="${tag.id}"/>
                         <div class="form-group">
                             <label id="labelNome" for="nome">Nome:</label>
-                            <input id="nome" class="form-control" name="nome" type="text" required  value="${nivelacesso.nome}"/>
+                            <input id="nome" class="form-control" name="nome" type="text" required  value="${tag.nome}"/>
                         </div>
                         <button id="sbutton" type="submit" class="btn btn-primary">Salvar</button>
                     </form>

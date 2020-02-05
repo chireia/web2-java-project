@@ -1,8 +1,8 @@
 package servlets;
 
-import dao.NivelAcessoDAO;
-import dao.NivelAcessoDAOImpl;
-import entidades.NivelAcesso;
+import dao.TagDAO;
+import dao.TagDAOImpl;
+import entidades.Tag;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,24 +11,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "NivelAcessoServletJSTL", urlPatterns = {"/nivelacessojstl"})
-public class NivelAcessoServletJSTL extends HttpServlet {
+@WebServlet(name = "TagServletJSTL", urlPatterns = {"/tagjstl"})
+public class TagServletJSTL extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        NivelAcesso n = new NivelAcesso();
-        NivelAcessoDAO dao = new NivelAcessoDAOImpl();
+        Tag t = new Tag();
+        TagDAO dao = new TagDAOImpl();
 
         if (request.getParameter("nome") != null) {
             if (!request.getParameter("id").equals("")) {
                 int id = Integer.parseInt(request.getParameter("id"));
-                n.setId(id);
+                t.setId(id);
             }
-            n.setNome(request.getParameter("nome"));
+            t.setNome(request.getParameter("nome"));
 
-            dao.save(n);
+            dao.save(t);
             
         } else if (request.getParameter("excluir") != null) {
 
@@ -41,14 +41,14 @@ public class NivelAcessoServletJSTL extends HttpServlet {
             int id = Integer
                     .parseInt(request
                             .getParameter("editar"));
-            n = dao.find(id);
-            request.setAttribute("nivelacesso", n);
+            t = dao.find(id);
+            request.setAttribute("tag", t);
         }
 
         request.setAttribute("lista", dao.list());
 
         RequestDispatcher view = request
-                .getRequestDispatcher("nivelacessojstl.jsp");
+                .getRequestDispatcher("tagjstl.jsp");
         view.forward(request, response);
 
     }
