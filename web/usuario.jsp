@@ -20,48 +20,13 @@
     </head>
     <body>
         <header id="header">
-            <div id="nav">
-                <div id="nav-fixed">
-                    <div class="container">
-                        <div class="nav-logo">
-                            <a href="index.html" class="logo"
-                               ><img src="./img/logo.png" alt=""
-                                  /></a>
-                        </div>
-
-                        <ul class="nav-menu nav navbar-nav">
-                            <li><a href="">News</a></li>
-                            <li><a href="">Popular</a></li>
-                            <li class="cat-1"><a href="">Web Design</a></li>
-                            <li class="cat-2"><a href="">JavaScript</a></li>
-                            <li class="cat-3"><a href="">Css</a></li>
-                            <li class="cat-4"><a href="">Jquery</a></li>
-                        </ul>
-
-                        <div class="nav-btns">
-                            <a href="login"><i class="fa fa-user"></i></a>
-                            <button class="aside-btn"><i class="fa fa-bars"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="nav-aside">
-                    <div class="section-row">
-                        <ul class="nav-aside-menu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="usuario">Usuários</a></li>
-                        </ul>
-                    </div>
-
-                    <button class="nav-aside-close"><i class="fa fa-times"></i></button>
-                </div>
-            </div>
+            <%@include file="navbar.html"%>
             <div class="page-header">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-10">
                             <ul class="page-header-breadcrumb">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.jsp">Home</a></li>
                                 <li>Usuários</li>
                             </ul>
                             <h1>Usuários</h1>
@@ -163,7 +128,6 @@
                                 function checkPasswords() {
                                     const senha = document.getElementById("senha").value;
                                     const cSenha = document.getElementById("csenha").value;
-                                    console.log(senha === cSenha);
                                     if (senha === cSenha) {
                                         document.getElementById("sbutton").removeAttribute("disabled");
                                     } else {
