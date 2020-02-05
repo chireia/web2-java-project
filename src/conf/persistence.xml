@@ -3,6 +3,10 @@
   <persistence-unit name="ProjetoPU" transaction-type="RESOURCE_LOCAL">
     <class>entidades.Usuario</class>
     <class>entidades.Tag</class>
+    <class>entidades.NivelAcesso</class>
+    <class>entidades.Curso</class>
+    <class>entidades.Livro</class>
+    <class>entidades.Post</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/projeto"/>
